@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+	<form action="/submit">
+		
+		<div class="form-group">
+	    	<label for="Temperature">Temperature</label>
+	    	<input type="form-text" class="form-control" name="temp" value="0">
+	  	</div>
+
+	  	<div class="form-group">
+	    	<label for="rain">Rainfall</label>
+	    	<input type="form-text" class="form-control" name="rain" value="0">
+	  	</div>
+	  	
+	  	<div class="form-group">
+	    	<label for="rain">Humidity</label>
+	    	<input type="form-text" class="form-control" name="humidity" value="0">
+	  	</div>
+
+	  	<div class="form-group">
+	    	<label for="rain">Climate</label>
+	    	<input type="form-text" class="form-control" name="climate" value="0">
+	  	</div>	  	
+	  
+	  	<div class="form-check">
+  			<input class="form-check-input" type="checkbox" value="1" name="black">
+  			<label class="form-check-label" for="black">
+    		Black Soil  
+  			</label>
+		</div>
+
+	  	<div class="form-check">
+  			<input class="form-check-input" type="checkbox" value="1" name="alluvial">
+  			<label class="form-check-label" for="alluvial">
+    		Alluvial Soil  
+  			</label>
+		</div>
+
+	  	<div class="form-check">
+  			<input class="form-check-input" type="checkbox" value="1" name="red">
+  			<label class="form-check-label" for="red">
+    		Red Soil  
+  			</label>
+		</div>
+
+		<div class="form-check">
+  			<input class="form-check-input" type="checkbox" value="1" name="laterite">
+  			<label class="form-check-label" for="laterite">
+    		Laterite Soil  
+  			</label>
+		</div>
+
+		<div class="form-check">
+  			<input class="form-check-input" type="checkbox" value="1" name="desert">
+  			<label class="form-check-label" for="desert">
+    		Desert Soil 
+  			</label>
+		</div>
+
+
+		<div class="form-check">
+  			<input class="form-check-input" type="checkbox" value="1" name="saline">
+  			<label class="form-check-label" for="saline">
+    		Saline Soil 
+  			</label>
+		</div>
+
+
+		<div class="form-check">
+  			<input class="form-check-input" type="checkbox" value="1" name="marshy">
+  			<label class="form-check-label" for="marshy">
+    		Marshy Soil 
+  			</label>
+		</div>
+
+
+		<div class="form-check">
+  			<input class="form-check-input" type="checkbox" value="1	" name="mountain">
+  			<label class="form-check-label" for="mountain">
+    		Mountain Soil 
+  			</label>
+		</div>
+
+
+	  <button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+
+	<script type="text/javascript">
+		$("form").submit(function () {
+
+    var this_master = $(this);
+
+    this_master.find('input[type="checkbox"]').each( function () {
+        var checkbox_this = $(this);
+
+
+        if( checkbox_this.is(":checked") == true ) {
+            checkbox_this.attr('value','1');
+        } else {
+            checkbox_this.prop('checked',true);
+            //DONT' ITS JUST CHECK THE CHECKBOX TO SUBMIT FORM DATA    
+            checkbox_this.attr('value','0');
+        }
+    })
+})
+
+	</script>
+{% endblock %}

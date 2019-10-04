@@ -1,0 +1,6 @@
+pandas
+numpy
+sklearn
+xlrd
+wikipedia
+api2pdf
