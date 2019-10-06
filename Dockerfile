@@ -1,4 +1,4 @@
-FROM python:rc-alpine3.10
+FROM adreeve/python-numpy
 COPY . /app/
 WORKDIR /app/
 RUN apk update
